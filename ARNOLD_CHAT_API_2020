@@ -1,0 +1,23 @@
+*lib - ARNOLD_CHAT_API_2020
+*// Copyright 2020 DeadLetter Partners, Version 1.04  //*
+*// Webhook management for Arnold CHAT TEMPLATE.//*  
+
+RECEIVE-WEBHOOK;
+	PARCEL-
+		A	jSCW3t 
+		
+SEND-WEBHOOK;
+	PARCEL-
+		A	api.domain.com/chat-bot
+
+MESSAGE;
+	PARCEL-
+		A	$_user
+		A	$_message
+
+	
+  /recall -- Oxford University Press
+
+  *END
+	
+	
