@@ -1,0 +1,19 @@
+ dld.keyset('NAME_YOURNAME')
+  *Catch-all - libs
+
+ REACT;
+	{reply to, respond}
+	'X', INTERPRET = 'M'
+	
+	
+  RESPOND;
+	{ calculate, RESPONSE 'M' = $reply }
+
+
+	^PAUSE
+  
+  POST;
+	ON, REACT
+	PARCEL-  C 'SEND' -- SEND-WEBHOOK
+	
+  *END
