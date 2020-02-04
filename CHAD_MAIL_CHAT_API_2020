@@ -1,0 +1,54 @@
+*lib -  CHAD_MAIL_CHAT_API_2020
+*// Copyright 2020 DeadLetter Partners, Version 1.04  //*
+*// Webhook management for Arnold CHAT TEMPLATE.//*  
+
+RECEIVE-WEBHOOK;
+PARCEL-
+		C	jSCW3t 
+		
+  SEND-WEBHOOK;
+	PARCEL-
+		X-WWW	api.domain.com/chat-bot
+
+  MESSAGE-FROM;
+	PARCEL-	
+		B	JSON		RV_to 
+		
+  MESSAGE;
+	PARCEL-
+		B	JSON		RV_subject
+		B	JSON		RV_message
+
+  SEND;
+		X-WWW	XW_to 
+		X-WWW	XW_subject
+		X-WWW	XW_message
+
+ XW_to;
+	PARCEL-
+		to VAL_ $_user
+
+ XW_subject;
+	PARCEL-
+		subject VAL_ $_subject
+
+ XW_message;
+	PARCEL-
+		message VAL_ $_reply
+		
+  RV_to;
+	PARCEL-
+		to VAL_ $_user
+		
+  RV_subject;
+	PARCEL-
+		subject VAL_ $_subject
+		{REMOVE, 'RE:,Re:,re:' if found}
+		
+  RV_message;
+	PARCEL-
+		html VAL_ $_message
+	
+  /recall -- Oxford University Press
+
+  *END
