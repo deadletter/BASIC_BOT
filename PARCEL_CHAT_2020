@@ -1,0 +1,90 @@
+*lib - PARCEL_CHAT_2020
+*// Copyright 2020 DeadLetter Partners, Version 1.04  //*
+*// Library for basic conversational communication using Parcel Arnold.//*  
+
+  INTERPRET;
+	{to describe the meaning of something; examine in order to explain}
+	{DEFINE THE CONTEXT OF WORDS]
+	
+  CALCULATE;
+	{to judge the INTERPRETATION by using the information that you already have} 
+	
+  RESPONSE;
+	{an answer or reaction}
+	
+  DEFINE;
+	{meaning of SOMETHING, WORDS
+	 describe the meaning and exact limits of something}
+	
+  MEANING;
+	{meaning of something is what it expresses or represents}
+
+  WORD;
+	{a single unit of language that has meaning and can be spoken or written}
+	
+  SORT;
+	{the act of separating things and putting them in a particular order}
+
+
+  MESSAGE -- RECEIVE-WEBHOOK;
+	VAL_  C#{ $ }
+	$ = W* 
+	
+  W_0;
+	'W'
+
+  W_1;
+	'WW'
+
+  W_3;
+	'WWW'
+	
+  W_4;
+	'WWWW'
+	
+  W_5;
+	'WWWWW'
+
+  WS_0;
+	{
+		C_var(W+WW)
+	}
+	
+  WS_1;
+	{
+		C_var(WWW+WWWW)
+	}
+	
+  WS_2;
+	{
+		C_var(WS_0+WS_1)
+	}	
+
+  STATE;
+
+	W_0 /recall -- Oxford University Press, HOLD_STATE
+	W_1 /recall -- Oxford University Press, HOLD_STATE	
+	W_2 /recall -- Oxford University Press, HOLD_STATE	
+	W_3 /recall -- Oxford University Press, HOLD_STATE
+	W_4 /recall -- Oxford University Press, HOLD_STATE	
+	W_5 /recall -- Oxford University Press, HOLD_STATE	
+	
+	{
+		C [ 
+			WS_0 -- INTERPRET = WI_0
+			WS_1 -- INTERPRET = WI_1
+			WS_2 -- INTERPRET = WI_2
+	  	]
+		= INTP
+	}
+
+  inpr_{ 'INTP' } = X
+	
+  C_POST
+	C_inpr('X')
+	
+  /recall -- Oxford University Press
+
+  *END
+	
+	
