@@ -1,0 +1,23 @@
+ dld.keyset('NAME_YOURNAME')
+  *Catch-all - libs
+
+ 
+  REACT;
+	{reply to, respond}
+	'X', INTERPRET = 'M'
+	
+	
+  RESPOND;
+	{ calculate, RESPONSE 'M' = $_message }
+	
+  User;
+	$_user	
+	
+	
+	^PAUSE
+  
+  POST;
+	ON, REACT
+	PARCEL-  A 'MESSAGE' -- SEND-WEBHOOK
+	
+  *END
